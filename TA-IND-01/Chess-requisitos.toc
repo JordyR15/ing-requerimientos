@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Resumen analítico de la norma ISO/IEC/IEEE 29148:2018}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Requisito bien formado (cláusula 5.2.4)}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Características de un requisito individual (cláusula 5.2.5)}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Características del conjunto de requisitos (cláusula 5.2.6)}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Expresiones ambiguas que deben evitarse}{3}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Glosario de términos (cláusula 3)}{4}{section.2}%
+\contentsline {section}{\numberline {3}Formulación de requisitos del sistema Chess.com}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Requisitos de calidad (ISO/IEC 25010:2023)}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Requisitos funcionales}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Requisitos de seguridad}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Requisitos de interfaz}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Requisitos de confiabilidad}{6}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Evidencias del sistema Chess.com}{7}{section.4}%
+\contentsline {section}{\numberline {5}Tabla de clasificación y criterios de aceptación}{8}{section.5}%
+\contentsline {section}{\numberline {6}Autoevaluación y versión corregida de los requisitos}{10}{section.6}%
+\contentsline {section}{\numberline {7}Reflexión}{13}{section.7}%
