@@ -1,0 +1,299 @@
+\documentclass[12pt,a4paper]{article}
+
+% -------------------------------------------------
+% PAQUETES Y CONFIGURACIÓN GENERAL
+% -------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % <--- Soluciona el error de fuentes escalables en microtype
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.4em}
+\renewcommand{\arraystretch}{1.25}
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ISR-401 | Ingeniería de Software}
+\rhead{FORM-TL-01}
+\cfoot{\thepage}
+\setlength{\headheight}{15pt}
+
+\begin{document}
+
+% -------------------------------------------------
+% PORTADA
+% -------------------------------------------------
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE Universidad Técnica Estatal de Quevedo\par}
+    \vspace{0.5cm}
+    {\scshape\Large Carrera de Ingeniería en Software\par}
+    \vspace{1.8cm}
+
+    {\Large\bfseries ISR-401 -- Ingeniería de Software\par}
+    \vspace{0.8cm}
+    {\huge\bfseries FORM-TL-01\par}
+    \vspace{0.3cm}
+    {\LARGE Taller: Identificación y clasificación de tipos de requisitos\par}
+
+    \vspace{1.5cm}
+    \begin{tabular}{>{\bfseries}p{4cm}p{8cm}}
+        Nivel: & Cuarto nivel\\
+        Tipo de actividad: & Formativa\\
+        Sistema seleccionado: & Plataforma de Gestión de Citas Médicas\\
+        Estudiante: & Jordy Rivas Bodero\\[0.5cm]
+        Compañero/a: & Trabajo individual\\[0.5cm]
+        Fecha: & 7 de noviembre de 2026\\
+    \end{tabular}
+
+    \vfill
+    {\large 2026\par}
+\end{titlepage}
+
+% -------------------------------------------------
+% CONTENIDO
+% -------------------------------------------------
+\section{Propósito y descripción del sistema}
+
+El propósito de esta hoja de trabajo es practicar la identificación y clasificación de requisitos a partir de enunciados relacionados con un sistema de software. Para desarrollar el ejercicio se propone una Plataforma de Gestión de Citas Médicas, debido a que no se proporcionó una lista específica de enunciados en clase.
+
+La plataforma permitirá a los pacientes registrarse, consultar especialidades, buscar médicos disponibles, reservar o cancelar citas y revisar sus próximas consultas. Asimismo, los médicos podrán consultar sus agendas y acceder a la información necesaria para atender a los pacientes, mientras que los administradores gestionarán usuarios, horarios y especialidades.
+
+La clasificación se realiza en cuatro categorías: funcional, no funcional, restricción y dominio. Como referencia conceptual se utiliza la norma ISO/IEC/IEEE 29148:2018, especialmente su terminología de la cláusula 3 y los lineamientos de ingeniería de requisitos de las cláusulas 4 y 5.
+
+\section{Criterios de clasificación}
+
+\begin{itemize}
+    \item \textbf{Requisito funcional:} describe un servicio, función o comportamiento que el sistema debe proporcionar.
+    \item \textbf{Requisito no funcional:} establece una característica de calidad o una condición medible del comportamiento del sistema, como rendimiento, seguridad o disponibilidad.
+    \item \textbf{Restricción:} establece una limitación que condiciona el diseño, desarrollo, implementación u operación de la solución.
+    \item \textbf{Requisito de dominio:} representa una regla, necesidad o condición propia del ámbito médico en el que funcionará el sistema.
+\end{itemize}
+
+\section{Clasificación de los enunciados}
+
+La siguiente matriz contiene 18 enunciados propuestos para el escenario. Cada uno se clasifica según su propósito principal y se justifica de acuerdo con los conceptos de requisitos de la norma ISO/IEC/IEEE 29148:2018.
+
+\small
+\begin{longtable}{>{\centering\arraybackslash}p{0.55cm}p{6.0cm}p{2.2cm}p{5.0cm}}
+\caption{Clasificación y justificación de los requisitos propuestos.} \\
+\toprule
+\textbf{N.º} & \textbf{Enunciado} & \textbf{Categoría} & \textbf{Justificación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{N.º} & \textbf{Enunciado} & \textbf{Categoría} & \textbf{Justificación} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continúa en la siguiente página}} \\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+1 & El sistema debe permitir que los pacientes se registren utilizando sus nombres, apellidos, número de identificación y datos de contacto. & Funcional & Describe una función que el sistema debe proporcionar para registrar nuevos pacientes.\\
+2 & El sistema debe permitir que los pacientes consulten las especialidades médicas disponibles. & Funcional & Establece una operación que el usuario puede realizar dentro de la plataforma.\\
+3 & El sistema debe permitir reservar una cita médica seleccionando un médico, una fecha y un horario disponible. & Funcional & Describe el servicio de reserva de citas que debe ofrecer el sistema.\\
+4 & El sistema debe permitir que los pacientes cancelen una cita previamente reservada. & Funcional & Define una acción que el paciente puede ejecutar mediante la plataforma.\\
+5 & El sistema debe permitir que los médicos consulten su agenda diaria de citas. & Funcional & Establece una función destinada a facilitar la consulta de las actividades del médico.\\
+6 & El sistema debe enviar una notificación al paciente cuando se confirme una reserva de cita. & Funcional & Describe una respuesta que debe generar el sistema después de confirmar una operación.\\
+7 & El sistema debe responder a las consultas de disponibilidad de horarios en un máximo de 3 segundos bajo una carga de prueba de 200 usuarios simultáneos. & No funcional & Establece una condición medible de rendimiento del sistema.\\
+8 & El sistema debe mantener una disponibilidad mensual mínima del 99,5\,\%, excluyendo los mantenimientos programados previamente comunicados. & No funcional & Define una característica de disponibilidad y confiabilidad del servicio.\\
+9 & El sistema debe proteger las contraseñas de los usuarios mediante un mecanismo de derivación de claves con sal individual. & No funcional & Establece una condición de seguridad para proteger las credenciales.\\
+10 & La interfaz web debe adaptarse a dispositivos móviles y de escritorio sin superposición de los controles principales en anchuras desde 360 píxeles. & No funcional & Define una condición de adaptación y usabilidad de la interfaz.\\
+11 & El sistema debe permitir recuperar la información de las citas confirmadas después de una interrupción del servicio, sin perder los registros previamente guardados. & No funcional & Establece una condición de confiabilidad y recuperación de información.\\
+12 & La plataforma debe desarrollarse utilizando Java con el framework Spring Boot para la implementación de sus servicios principales. & Restricción & Limita las tecnologías que pueden utilizarse durante el desarrollo.\\
+13 & La base de datos utilizada por la plataforma debe ser PostgreSQL. & Restricción & Establece una tecnología obligatoria para el almacenamiento de información.\\
+14 & La plataforma debe estar disponible en idioma español durante su primera versión de implementación. & Restricción & Limita el idioma que debe contemplar la versión inicial del producto.\\
+15 & El sistema debe impedir que se reserve una cita en un horario que ya esté ocupado por otro paciente con el mismo médico. & Dominio & Representa una regla del proceso de gestión de citas y de la disponibilidad médica.\\
+16 & El sistema debe permitir que cada cita médica esté asociada a un paciente, un médico, una especialidad, una fecha y un horario. & Dominio & Refleja las relaciones propias de la gestión de consultas médicas.\\
+17 & El sistema debe registrar la información de las alergias del paciente para que pueda ser consultada por el personal médico autorizado durante la atención. & Dominio & Responde a una necesidad específica del ámbito sanitario y de la atención al paciente.\\
+18 & El sistema debe permitir registrar el motivo de consulta del paciente para que el médico pueda revisarlo antes de la atención. & Dominio & Representa información propia del proceso de consulta médica.\\
+\end{longtable}
+\normalsize
+
+\noindent\textit{Nota:} la clasificación se realiza según la naturaleza principal de cada enunciado. En un proyecto real, algunos requisitos de dominio también pueden expresarse como requisitos funcionales o de calidad. Se utiliza la categoría de dominio cuando la condición procede específicamente de las reglas del ámbito médico.
+
+\section{Identificación de problemas de calidad y propuestas de mejora}
+
+La cláusula 5.2.5 de ISO/IEC/IEEE 29148:2018 describe características de calidad de los requisitos individuales. Entre ellas se encuentran la claridad, la completitud, la singularidad y la verificabilidad. Al revisar los enunciados se identifican cinco casos que presentan problemas de redacción.
+
+\subsection{Caso 1: ambigüedad}
+
+\textbf{Enunciado original:}
+
+\begin{quote}
+El sistema debe permitir que los pacientes encuentren rápidamente los horarios disponibles para sus consultas médicas.
+\end{quote}
+
+\textbf{Problema identificado:} la palabra ``rápidamente'' es ambigua, porque no establece cuánto tiempo debe tardar el sistema en mostrar los horarios. Cada usuario podría interpretarla de una manera diferente.
+
+\textbf{Versión mejorada:}
+
+\begin{quote}
+El sistema debe mostrar los horarios disponibles de un médico en un tiempo máximo de 3 segundos, bajo una carga de prueba de 200 usuarios simultáneos.
+\end{quote}
+
+\textbf{Justificación:} se reemplazó una expresión subjetiva por una métrica de tiempo y una condición de prueba. De esta manera, el cumplimiento puede verificarse mediante pruebas de rendimiento.
+
+\subsection{Caso 2: falta de verificabilidad}
+
+\textbf{Enunciado original:}
+
+\begin{quote}
+El sistema debe ser fácil de utilizar para todos los pacientes.
+\end{quote}
+
+\textbf{Problema identificado:} la expresión ``fácil de utilizar'' no establece cómo se medirá la facilidad de uso ni qué condiciones deben cumplirse para considerar que el sistema satisface esta necesidad.
+
+\textbf{Versión mejorada:}
+
+\begin{quote}
+Al menos el 90\,\% de los participantes de una prueba de usabilidad deberá completar correctamente el proceso de reserva de una cita médica sin asistencia, utilizando el prototipo de la plataforma.
+\end{quote}
+
+\textbf{Justificación:} se incorporó un indicador cuantificable que permite evaluar la facilidad de uso mediante pruebas con usuarios.
+
+\subsection{Caso 3: información incompleta}
+
+\textbf{Enunciado original:}
+
+\begin{quote}
+El sistema debe enviar recordatorios a los pacientes antes de sus citas médicas.
+\end{quote}
+
+\textbf{Problema identificado:} no se especifica cuánto tiempo antes de la consulta se enviará el recordatorio ni por qué medio se realizará la notificación.
+
+\textbf{Versión mejorada:}
+
+\begin{quote}
+El sistema debe enviar una notificación al paciente 24 horas antes de la fecha y hora de su cita confirmada, mediante el correo electrónico registrado en su cuenta.
+\end{quote}
+
+\textbf{Justificación:} se especificaron el momento y el medio de envío, lo que permite comprender mejor el comportamiento esperado y comprobarlo mediante pruebas.
+
+\subsection{Caso 4: posible inconsistencia}
+
+\textbf{Enunciado original:}
+
+\begin{quote}
+El sistema debe permitir que los pacientes reserven citas médicas en cualquier horario, pero solamente podrá mostrar los horarios establecidos por cada médico.
+\end{quote}
+
+\textbf{Problema identificado:} existe una contradicción entre permitir reservas en cualquier horario y limitar las reservas a los horarios establecidos por los médicos.
+
+\textbf{Versión mejorada:}
+
+\begin{quote}
+El sistema debe permitir que los pacientes reserven citas únicamente dentro de los horarios de atención que cada médico haya registrado como disponibles.
+\end{quote}
+
+\textbf{Justificación:} se eliminó la contradicción y se estableció una condición coherente con la administración de agendas médicas.
+
+\subsection{Caso 5: término general}
+
+\textbf{Enunciado original:}
+
+\begin{quote}
+El sistema debe proteger adecuadamente la información personal y médica de los pacientes.
+\end{quote}
+
+\textbf{Problema identificado:} el término ``adecuadamente'' no especifica qué mecanismos de seguridad se deben implementar ni cómo se comprobará su cumplimiento.
+
+\textbf{Versión mejorada:}
+
+\begin{quote}
+El sistema debe restringir el acceso a los expedientes médicos a los usuarios autenticados que tengan asignado un rol autorizado para consultar dicha información.
+\end{quote}
+
+\textbf{Justificación:} se reemplazó una expresión general por una condición concreta de control de acceso que puede verificarse mediante pruebas de autorización.
+
+\section{Comparación de criterios con un compañero}
+
+La comparación entre estudiantes permite identificar que un mismo enunciado puede generar diferentes interpretaciones cuando no está redactado con suficiente precisión. La siguiente tabla es un formato de registro que debe contrastarse con la clasificación real de un compañero durante la actividad.
+
+\small
+\begin{longtable}{>{\centering\arraybackslash}p{0.65cm}p{4.5cm}p{2.3cm}p{2.8cm}p{3.5cm}}
+\caption{Registro de diferencias de clasificación.} \\
+\toprule
+\textbf{N.º} & \textbf{Requisito analizado} & \textbf{Mi clasificación} & \textbf{Clasificación del compañero} & \textbf{Diferencia identificada} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{N.º} & \textbf{Requisito analizado} & \textbf{Mi clasificación} & \textbf{Clasificación del compañero} & \textbf{Diferencia identificada} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\textit{Continúa en la siguiente página}} \\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+1 & Registrar los datos personales del paciente. & Funcional & Funcional & No existe diferencia. \\
+2 & Utilizar PostgreSQL como base de datos. & Restricción & No funcional & Se confundió una tecnología obligatoria con una característica de calidad. \\
+3 & Impedir reservas en horarios ocupados. & Dominio & Funcional & Se interpretó como una función del sistema y no como una regla propia de la gestión médica. \\
+4 & Mantener una disponibilidad mensual del 99,5\,\%. & No funcional & No funcional & No existe diferencia. \\
+5 & Registrar las alergias del paciente. & Dominio & Funcional & Se consideró la operación de registro sin tener en cuenta el contexto sanitario de la información. \\
+\end{longtable}
+\normalsize
+
+\noindent\textbf{Reflexión sobre las diferencias:}
+
+Al comparar las clasificaciones se puede observar que algunas categorías pueden confundirse, especialmente cuando un requisito funcional responde a una regla específica del dominio médico.
+
+Por ejemplo, impedir que dos pacientes reserven el mismo horario con un médico puede interpretarse como una función del sistema, pero también representa una regla propia del proceso de gestión de citas. La diferencia está en identificar de dónde proviene la necesidad y qué aspecto se desea destacar.
+
+También es importante diferenciar las restricciones de los requisitos no funcionales. Establecer PostgreSQL como tecnología obligatoria limita la solución técnica, mientras que exigir un tiempo máximo de respuesta establece una condición de rendimiento.
+
+Esta comparación permite comprender que la clasificación no consiste solamente en identificar palabras dentro de un enunciado, sino en analizar su propósito y el contexto en el que se utilizará el sistema.
+
+\section{Conclusión}
+
+La realización de esta actividad permitió comprender la importancia de identificar y clasificar correctamente los requisitos durante el desarrollo de un sistema de software. Mediante el escenario de una plataforma de gestión de citas médicas fue posible reconocer que cada tipo de requisito cumple una función diferente y aporta información necesaria para definir el comportamiento y las condiciones de funcionamiento del sistema.
+
+Los requisitos funcionales describen las operaciones que podrán realizar los usuarios, mientras que los no funcionales establecen características de calidad como el rendimiento, la seguridad y la disponibilidad. Por otra parte, las restricciones limitan las decisiones técnicas del proyecto y los requisitos de dominio representan las reglas y necesidades propias del entorno médico.
+
+Asimismo, se comprobó que una mala redacción puede provocar interpretaciones diferentes y dificultar la implementación o evaluación del sistema. Por esta razón, es necesario evitar términos ambiguos, establecer condiciones verificables y mantener la coherencia entre los requisitos.
+
+En conclusión, aplicar los principios de la norma ISO/IEC/IEEE 29148:2018 ayuda a documentar requisitos más claros, completos y comprensibles, lo que permite reducir errores de comunicación y establecer una base adecuada para el desarrollo de soluciones de software.
+
+\section{Referencias bibliográficas}
+
+\begin{thebibliography}{9}
+    \bibitem{iso29148}
+    ISO/IEC/IEEE. (2018).
+    \textit{ISO/IEC/IEEE 29148:2018. Systems and software engineering -- Life cycle processes -- Requirements engineering}.
+    International Organization for Standardization.
+
+    \bibitem{pohl}
+    Pohl, K. (2025).
+    \textit{Fundamentals of Requirements Engineering}, capítulo 1.
+    Referencia indicada en la guía de la actividad. Completar los datos editoriales con el material proporcionado en clase.
+
+    \bibitem{ireb}
+    IREB. (2024).
+    \textit{CPRE Foundation Level Syllabus, Version 3.1}.
+    International Requirements Engineering Board.
+\end{thebibliography}
+
+\end{document}
